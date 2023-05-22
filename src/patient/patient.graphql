@@ -1,0 +1,41 @@
+type Patient {
+  patientId:String,
+  firstName:String,
+  lastName:String,
+  dateOfBirth:String, 
+  phones:String,
+  createdBy: String,
+  modifiedBy: String,
+}
+
+input CreatePatientInput {
+  patientId:String!,
+  firstName:String!,
+  lastName:String!,
+  dateOfBirth:String!, 
+  phones:String!,
+  createdBy: String!,
+  modifiedBy: String!,
+}
+
+input UpdatePatientInput {
+  patientId:String!,
+  firstName:String,
+  lastName:String,
+  dateOfBirth:String, 
+  phones:String,
+  createdBy: String,
+  modifiedBy: String,
+}
+
+type Query {
+  patients(PatientName:String): [Patient]!
+  patient(patientId: String!): Patient! 
+
+}
+
+type Mutation {
+  createPatient(createPatientInput: CreatePatientInput!): Patient!
+  updatePatient(updatePatientInput: UpdatePatientInput!): Patient!
+  removePatient(patientId: String!): Boolean
+}

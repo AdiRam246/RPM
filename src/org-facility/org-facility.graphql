@@ -1,0 +1,47 @@
+type OrgFacility {
+  orgFacilityId:String!,
+  orgId:String!,
+  facilityId: String!,
+  active: Boolean
+  orgdetail:[Org]
+}
+
+type Org {
+  orgId:String!,
+  name:String!,
+  orgType:String,
+  npi:String!
+  orgFatility:[OrgFacility]!
+}
+
+input CreateOrgInput {
+  name:String!,
+  orgType:String,
+  npi:String!
+}
+
+
+input CreateOrgFacilityInput {
+  orgFacilityId:String,
+  orgId:String!,
+  facilityId: String!,
+  active: Boolean
+}
+
+input UpdateOrgFacilityInput {
+  orgFacilityId:String!,
+  orgId:String,
+  facilityId: String,
+  active: Boolean
+}
+
+type Query {
+  orgFacilitys(orgId:String): [OrgFacility]!
+  orgFacility(orgFacilityId:String!): OrgFacility
+}
+
+type Mutation {
+  createOrgFacility(createOrgFacilityInput: CreateOrgFacilityInput!): OrgFacility!
+  updateOrgFacility(updateOrgFacilityInput: UpdateOrgFacilityInput!): OrgFacility!
+  removeOrgFacility(orgFacilityId: String!): Boolean
+}

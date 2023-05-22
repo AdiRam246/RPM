@@ -1,0 +1,34 @@
+type Facility {
+  facilityId:String,
+  name:String,
+  address: Address
+}
+type Address{
+    line1:String!,
+    line2:String,
+    city: String!,
+    state: String!,
+    zip: String!,
+    country: String!
+}
+
+input CreateFacilityInput {
+  facilityId:String,
+  name:String,
+  address: Address
+}
+
+input UpdateFacilityInput {
+  id: Int!
+}
+
+type Query {
+  facility: [Facility]!
+  
+}
+
+type Mutation {
+  createFacility(createFacilityInput: CreateFacilityInput!): Facility!
+  updateFacility(updateFacilityInput: UpdateFacilityInput!): Facility!
+  removeFacility(id: Int!): Facility
+}
