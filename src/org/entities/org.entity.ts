@@ -3,8 +3,6 @@ import { Entity, Column, ObjectIdColumn } from 'typeorm';
 
 @Entity()
 export class org extends Basicapp {
-  @ObjectIdColumn()
-  id: string;
   @Column()
   orgId: string;
   @Column()

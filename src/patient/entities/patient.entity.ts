@@ -4,8 +4,6 @@ import { Entity, Column, ObjectIdColumn } from 'typeorm';
 
 @Entity()
 export class Patient extends Basicapp {
-  @ObjectIdColumn()
-  id: string;
   @Column()
   patientId: string;
   @Column()

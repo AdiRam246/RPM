@@ -22,6 +22,7 @@ export class PatientService {
     user.dateOfBirth = createPatientInput.dateOfBirth;
     user.modifiedBy = createPatientInput.modifiedBy;
     user.createdBy = createPatientInput.createdBy;
+    user.createdAt = new Date();
     return this.PatientRepository.save(user);
   }
 
