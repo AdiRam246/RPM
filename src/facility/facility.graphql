@@ -14,8 +14,6 @@ type Address{
 
 input CreateFacilityInput {
   facilityId:String,
-  name:String,
-  address: Address
 }
 
 input UpdateFacilityInput {

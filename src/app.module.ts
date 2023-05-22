@@ -17,7 +17,7 @@ import { OrgFacilityModule } from './org-facility/org-facility.module';
     }),
     TypeOrmModule.forRoot({
       type: 'mongodb',
-      url: 'mongodb+srv://clinicpass-db-user:T3S6T2@cluster1.lfqlkof.mongodb.net/',
+      url: process.env.DATABASE_URL,
       entities: [join(__dirname, '**/**.entity{.ts,.js}')],
       synchronize: true,
       useNewUrlParser: true,
